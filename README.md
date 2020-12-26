@@ -2,7 +2,7 @@
 This repository contains an implementation of manuscript "Non-Negative Sparse PCA: An Intelligible Exact Approach".
 
 ## Installation
-conda install --yes --file requirements.txt
+See requirements.txt
 
 ## Citation
 If you use this code in your experiments please cite this work by using the following bibtex entry:
