@@ -11,7 +11,7 @@ cur_path = os.path.dirname(__file__)
 
 def main():
 
-    print ('Run Oja\'s PCA subspace method...')
+    print ('Run nnOSLR.')
 
     fit_start_time = time.time()
 
