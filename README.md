@@ -9,7 +9,6 @@ If you use this code in your experiments please cite this work by using the foll
 
 ```
 @ARTICLE{9305265,
-
   author={I. {Tsingalis} and C. {Kotropoulos} and A. {Drosou} and D. {Tzovaras}},
   journal={IEEE Transactions on Emerging Topics in Computational Intelligence}, 
   title={Non-Negative Sparse PCA: An Intelligible Exact Approach}, 
