@@ -3,4 +3,4 @@
 *.xml
 *.iml
 bc/
-
+dataset/mnist/
