@@ -43,8 +43,8 @@ if __name__ == "__main__":
         images_tst, labels_tst = mndata.load_testing()
         X = np.asarray(images_tr).astype(np.float64)
 
-        n_components = 6
-        alg_settings = {"store_model"       : False,
+        n_components = 16
+        alg_settings = {"store_model"       : True,
                         "cache"             : os.path.join(cur_path, 'cache', datasetName),
                         "n_components"      : n_components,
                         "active_tolerance"  : 1e-3,

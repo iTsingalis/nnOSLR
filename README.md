@@ -7,7 +7,7 @@ This repository contains an implementation of manuscript "[Non-Negative Sparse P
 The requirements are in the requirements.txt file. 
 
 
-### 2. Download Datasets
+### 2. Download Dataset
 You can download the dataset from [here](https://www.kaggle.com/datasets/hojjatk/mnist-dataset) and extract them to the folder datasets.
 
 

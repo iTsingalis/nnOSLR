@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from mnist import MNIST
 import numpy as np
 import argparse
+from sklearn.metrics import accuracy_score
 
 def log_class(Xs_tr_pca, Xs_tst_pca, lb_tr, lb_tst):
 
@@ -19,11 +20,14 @@ def log_class(Xs_tr_pca, Xs_tst_pca, lb_tr, lb_tst):
     search = GridSearchCV(classifier, param_grid=param_grid, cv=5, return_train_score=False, n_jobs=-1, verbose=1)
     search.fit(Xs_tr_pca, lb_tr)
 
-    y_score = search.predict_proba(Xs_tst_pca)
+    y_score = search.best_estimator_.predict_proba(Xs_tst_pca)
 
     y_pred = search.best_estimator_.predict(Xs_tst_pca)
 
+    y_pred = np.argmax(y_pred, axis=1)
+    lb_tst = np.argmax(lb_tst, axis=1)
     acc = np.mean(y_pred == lb_tst)
+
     print('Acc. {0}'.format(acc))
 
     return y_score
@@ -31,15 +35,16 @@ def log_class(Xs_tr_pca, Xs_tst_pca, lb_tr, lb_tst):
 
 def main():
 
-    n_comp = 6
+    n_comp = 16
     method = "nnOSLR"
     plot_components = True
 
-    file_name = 'nnsOSLR_2020-12-26_16-33-18_c_0_to_6.pickle'
+    # file_name = 'nnsOSLR_2020-12-26_16-33-18_c_0_to_6.pickle'
+    file_name = 'nnsOSLR_2021-02-11_19-01-47_c_0_to_16.pickle'
     W = get_loadings(file_name=file_name, n_components=n_comp)
 
     if plot_components:
-        plot_patches(W, 'nnOSLR', image_shape, nCols=3, nRows=2)
+        plot_patches(W, 'nnOSLR', image_shape, nCols=8, nRows=2)
 
     # Embed data
     X_tr_pca = np.dot(X_tr, W)
@@ -122,10 +127,10 @@ if __name__ == "__main__":
 
     # Binarize the output for multiclass roc evaluation
     classes = np.unique(labels_tr)
+
     label_binarize = preprocessing.LabelBinarizer()
     labels_tr = label_binarize.fit_transform(labels_tr)
     labels_tst = label_binarize.transform(labels_tst)
-
     n_classes = labels_tr.shape[1]
 
     main()
