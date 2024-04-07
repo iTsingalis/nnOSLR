@@ -8,7 +8,7 @@ The requirements are in the requirements.txt file.
 
 
 ### 2. Download Dataset
-You can download the dataset from [here](https://www.kaggle.com/datasets/hojjatk/mnist-dataset) and extract them to the folder datasets.
+You can download the dataset from [here](https://www.kaggle.com/datasets/hojjatk/mnist-dataset) and extract them to the folder dataset (see directory structure below).
 
 
 ### 3. Train and Test
@@ -18,6 +18,13 @@ To train the algorithm, you can run
 ```angular2
 run_nnsOSLR.py --task_name mnist
 ```
+
+To test the algorithm, you can run
+
+```angular2
+run_classification.py --task_name mnist
+```
+
 
 ### Directory structure
 
