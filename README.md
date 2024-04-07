@@ -1,10 +1,48 @@
-# nnsOSLR: Non-Negative Oja Subspace Learning Rule
-This repository contains an implementation of manuscript "Non-Negative Sparse PCA: An Intelligible Exact Approach".
+# Non-Negative Oja’s Subspace Learning Rule (NN-OSLR)
+This repository contains an implementation of manuscript "[Non-Negative Sparse PCA: An Intelligible Exact Approach](https://ieeexplore.ieee.org/document/9305265)".
 
-## Installation
-See requirements.txt
 
-## Citation
+## Usage
+### 1. Requirements
+The requirements are in the requirements.txt file. 
+
+
+### 2. Download Datasets
+You can download the dataset from [here](https://www.kaggle.com/datasets/hojjatk/mnist-dataset) and extract them to the folder datasets.
+
+
+### 3. Train and Test
+
+To train the algorithm, you can run
+
+```angular2
+run_nnsOSLR.py --task_name mnist
+```
+
+### Directory structure
+
+```
+.
+├── code
+│   ├── nnsOSLR.py
+│   ├── run_classification.py
+│   ├── run_nnsOSLR.py
+│   └── utils.py
+├── dataset
+│   └── mnist
+│       ├── t10k-images-idx3-ubyte
+│       ├── t10k-images-idx3-ubyte.gz
+│       ├── t10k-labels-idx1-ubyte
+│       ├── t10k-labels-idx1-ubyte.gz
+│       ├── train-images-idx3-ubyte
+│       ├── train-images-idx3-ubyte.gz
+│       ├── train-labels-idx1-ubyte
+│       └── train-labels-idx1-ubyte.gz
+├── README.md
+└── requirements.txt
+```
+
+## Reference
 If you use this code in your experiments please cite this work by using the following bibtex entry:
 
 ```
